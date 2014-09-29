@@ -1,0 +1,23 @@
+Build V8 engine: https://code.google.com/p/v8/wiki/BuildingWithGYP
+
+Ubuntu 14.04:
+git clone git://github.com/v8/v8.git
+cd v8
+make builddeps
+make native library=shared
+
+
+Windows:
+git clone git://github.com/v8/v8.git
+
+cd v8
+svn co http://gyp.googlecode.com/svn/trunk build/gyp --revision 1831
+svn co http://src.chromium.org/svn/trunk/tools/third_party/python_26 third_party/python_26 --revision 89111
+svn co http://src.chromium.org/svn/trunk/deps/third_party/cygwin third_party/cygwin --revision 66844
+svn co https://src.chromium.org/chrome/trunk/deps/third_party/icu52 third_party/icu --revision 277999
+svn co http://googletest.googlecode.com/svn/trunk testing/gtest --revision 643
+svn co http://googlemock.googlecode.com/svn/trunk testing/gmock --revision 410
+
+third_party/python_26/python.exe build\gyp_v8 -Dtarget_arch=x64
+"c:\Program Files (x86)\Microsoft Visual Studio 9.0\Common7\IDE\devenv.com" /build Release build\All.sln
+
