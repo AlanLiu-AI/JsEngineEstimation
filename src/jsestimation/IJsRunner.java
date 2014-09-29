@@ -7,4 +7,8 @@ public interface IJsRunner {
 	Object get(String key);
 	
 	Object eval(String script);
+	
+	void compile(String script);
+	
+	Object evalCompiledScript();
 }

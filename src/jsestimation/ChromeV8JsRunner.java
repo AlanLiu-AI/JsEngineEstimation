@@ -15,8 +15,24 @@ public class ChromeV8JsRunner extends BaseJsRunner {
     	try {
     		IJsRunner jsRunner = new ChromeV8JsRunner();
     		
-    		jsRunner.put("x", "hello world");            
-    		jsRunner.eval("println(x)");
+    		jsRunner.put("x", 12);            
+    		jsRunner.put("y", 12);
+    		Object retObj = jsRunner.eval("x*y");
+    		
+    		System.out.println(retObj);
+    		
+    	} catch(Exception ex) {
+    		ex.printStackTrace();
+    	}
+    	
+    	try {
+    		IJsRunner jsRunner = new ChromeV8JsRunner();
+    		
+    		jsRunner.put("x", "hello world in compiled script");            
+    		jsRunner.compile("println(x); x");
+    		
+    		Object retObj = jsRunner.evalCompiledScript();
+    		System.out.println(retObj);
     		
     	} catch(Exception ex) {
     		ex.printStackTrace();

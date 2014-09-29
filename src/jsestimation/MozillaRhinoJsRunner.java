@@ -11,8 +11,11 @@ public class MozillaRhinoJsRunner extends BaseJsRunner {
     	try {
     		IJsRunner jsRunner = new MozillaRhinoJsRunner();
     		
-    		jsRunner.put("x", "hello world");
-    		jsRunner.eval("println(x)");
+    		jsRunner.put("x", 12);            
+    		jsRunner.put("y", 12);
+    		Object retObj = jsRunner.eval("x*y");
+    		
+    		System.out.println(retObj);
     		
     	} catch(Exception ex) {
     		ex.printStackTrace();
