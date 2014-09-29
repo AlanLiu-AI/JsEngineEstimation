@@ -23,14 +23,16 @@ The test consisted in encrypting 10000 records of text from a database, and meas
 And from the following results show that V8 wins by a big margin.
 
 ### The results: 
-Engine	Time taken (seconds)
-V8	    2.96
-Rhino	36.67
+| Engine        | Time taken (seconds) |
+| ------------- |:--------------------:|
+| V8            | 2.96                 |
+| Rhino         | 36.67                |
 
 ### The results in bentchmarks:
-JsPerfTest.runRhinoJs: [measured 10 out of 15 rounds, threads: 1 (sequential)]
- round: 2.15 [+- 0.23], round.block: 0.00 [+- 0.00], round.gc: 0.00 [+- 0.00], GC.calls: 10, GC.time: 0.03, time.total: 36.67, time.warmup: 15.16, time.bench: 21.51
-JsPerfTest.runV8Js: [measured 10 out of 15 rounds, threads: 1 (sequential)]
- round: 0.20 [+- 0.08], round.block: 0.00 [+- 0.00], round.gc: 0.00 [+- 0.00], GC.calls: 3, GC.time: 0.08, time.total: 2.96, time.warmup: 0.98, time.bench: 1.98
+>JsPerfTest.runRhinoJs: [measured 10 out of 15 rounds, threads: 1 (sequential)]
+> round: 2.15 [+- 0.23], round.block: 0.00 [+- 0.00], round.gc: 0.00 [+- 0.00], GC.calls: 10, GC.time: 0.03, time.total: 36.67, time.warmup: 15.16, time.bench: 21.51
+>JsPerfTest.runV8Js: [measured 10 out of 15 rounds, threads: 1 (sequential)]
+> round: 0.20 [+- 0.08], round.block: 0.00 [+- 0.00], round.gc: 0.00 [+- 0.00], GC.calls: 3, GC.time: 0.08, time.total: 2.96, time.warmup: 0.98, time.bench: 1.98
+
 
 
